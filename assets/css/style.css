@@ -1,0 +1,199 @@
+/* ========================
+   variables de colores para todo
+======================== */
+:root {
+  --verde-oscuro: #2d5a27;
+  --verde-medio: #4a7c3f;
+  --verde-claro: #e8f5e2;
+  --verde-suave: #f2faf0;
+  --texto-oscuro: #1e3a1a;
+  --texto-medio: #4a5e45;
+  --blanco: #ffffff;
+}
+
+/* ========================
+   reset 
+======================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+body {
+  font-family: Georgia, serif;
+  background-color: var(--verde-suave);
+  color: var(--texto-oscuro);
+}
+
+
+
+/* ========================
+   REQUERIMIENTO 1
+   css grid 
+   + grid-template-areas
+======================== */
+.navbar {
+  grid-area: navbar;
+}
+
+.aside {
+  grid-area: aside;
+}
+
+.grilla {
+  grid-area: grilla;
+}
+
+
+.footer {
+  grid-area: footer;
+}
+
+.contenedor {
+  display: grid;
+  grid-template-areas:
+    "aside grilla";
+  grid-template-columns: 180px 1fr;
+  min-height: calc(100vh - 50px - 50px);
+}
+
+
+
+/* ========================
+   NAVBAR
+======================== */
+.navbar {
+  background-color: var(--verde-oscuro);
+  color: var(--blanco);
+  padding: 14px 24px;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+
+
+/* ========================
+   REQUERIMIENTO 3
+   aside flex box
+======================== */
+.aside {
+  background-color: var(--verde-claro);
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #c5e0bc;
+}
+
+.aside h3 {
+  color: var(--verde-oscuro);
+  margin-bottom: 12px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.aside ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.aside ul li {
+  color: var(--texto-medio);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.aside ul li:hover {
+  color: var(--verde-oscuro);
+  font-weight: bold;
+}
+
+/* ========================
+   REQUERIMIENTO 2
+   grilla de productos
+======================== */
+.grilla {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /*-las 3 columnas miden lo mismo-*/
+  gap: 20px;
+  padding: 24px;
+  background-color: var(--verde-suave);
+  align-content: start;
+}
+
+
+
+/* ========================
+   REQUERIMIENTO 4
+   flex box vertical
+======================== */
+.tarjeta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--blanco);
+  border: 1px solid #d4eacf;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tarjeta img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  background-color: var(--verde-claro);
+  box-shadow: 0 2px 8px rgba(45, 90, 39, 0.15);
+}
+
+.tarjeta h4 {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: var(--texto-oscuro);
+  text-align: center;
+  padding: 0 8px;
+}
+
+.tarjeta p {
+  margin: 6px 0 12px;
+  color: var(--verde-medio);
+  font-size: 0.9rem;
+}
+
+.tarjeta button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--verde-oscuro);
+  color: var(--blanco);
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  margin-top: auto;
+}
+
+.tarjeta button:hover {
+  background-color: var(--verde-medio);
+}
+
+
+
+/* ========================
+   FOOTER
+======================== */
+.footer {
+  background-color: var(--verde-oscuro);
+  color: var(--blanco);
+  text-align: center;
+  padding: 14px;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
